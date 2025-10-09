@@ -132,9 +132,14 @@
             <li>Local agents across neighborhoods</li>
             <li>Easy booking for viewings</li>
           </ul>
+          <!-- Playable video -->
+          <video controls style="width:100%;border-radius:12px;margin-top:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div style="min-width:260px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(16,24,40,0.06)">
-          <img src="https://images.unsplash.com/photo-1505691723518-36a5a5304c6a?w=1200&auto=format&fit=crop&q=60" alt="House interior" style="width:100%;height:220px;object-fit:cover;display:block">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=60" alt="House interior" style="width:100%;height:220px;object-fit:cover;display:block">
         </div>
       </div>
     </section>
@@ -174,13 +179,13 @@
   </footer>
 
   <script>
-    // Sample property data (replace with real data or JSON fetch)
+    // Updated property data with fresh images
     const properties = [
-      { id: 1, title: "Modern 2-bed apartment, Kilimani", price: 85000, type: "Apartment", beds: 2, location: "Kilimani", img: "https://images.unsplash.com/photo-1560184897-e28b2b36b56b?w=1200&q=60&auto=format&fit=crop" },
-      { id: 2, title: "3-bed family home, Westlands", price: 180000, type: "House", beds: 3, location: "Westlands", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=60&auto=format&fit=crop" },
-      { id: 3, title: "Studio apartment, CBD", price: 45000, type: "Apartment", beds: 1, location: "CBD", img: "https://images.unsplash.com/photo-1505691723518-36a5a5304c6a?w=1200&q=60&auto=format&fit=crop" },
-      { id: 4, title: "Retail space for lease, Karen", price: 320000, type: "Commercial", beds: 0, location: "Karen", img: "https://images.unsplash.com/photo-1549187774-b4e9c1d6d3b9?w=1200&q=60&auto=format&fit=crop" },
-      { id: 5, title: "4-bed luxury home, Runda", price: 420000, type: "House", beds: 4, location: "Runda", img: "https://images.unsplash.com/photo-1572120360610-d971b9b7767c?w=1200&q=60&auto=format&fit=crop" }
+      { id: 1, title: "Modern 2-bed apartment, Kilimani", price: 85000, type: "Apartment", beds: 2, location: "Kilimani", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80" },
+      { id: 2, title: "3-bed family home, Westlands", price: 180000, type: "House", beds: 3, location: "Westlands", img: "https://images.unsplash.com/photo-1572120360610-d971b9b7767c?w=1200&auto=format&fit=crop&q=80" },
+      { id: 3, title: "Studio apartment, CBD", price: 45000, type: "Apartment", beds: 1, location: "CBD", img: "https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200&auto=format&fit=crop&q=80" },
+      { id: 4, title: "Retail space for lease, Karen", price: 320000, type: "Commercial", beds: 0, location: "Karen", img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&auto=format&fit=crop&q=80" },
+      { id: 5, title: "4-bed luxury home, Runda", price: 420000, type: "House", beds: 4, location: "Runda", img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&auto=format&fit=crop&q=80" }
     ];
 
     const grid = document.getElementById('propertiesGrid');
@@ -217,7 +222,7 @@
 
     function bookViewing(id){
       const p = properties.find(x=>x.id===id);
-      alert('Requesting viewing for:\\n' + p.title + '\\nWe will contact you shortly.');
+      alert('Requesting viewing for:\n' + p.title + '\nWe will contact you shortly.');
     }
     function save(id){
       alert('Saved property #' + id + ' to your favorites (local demo).');

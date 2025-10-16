@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Tables Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 40px;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 70%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px 12px;
+    }
+
+    /* Column color formatting */
+    th:nth-child(1), td:nth-child(1) { background-color: #e8f0fe; } /* light blue */
+    th:nth-child(2), td:nth-child(2) { background-color: #fef7e8; } /* light yellow */
+    th:nth-child(3), td:nth-child(3) { background-color: #e8fef0; } /* light green */
+    th:nth-child(4), td:nth-child(4) { background-color: #fde8ef; } /* light pink */
+    th:nth-child(5), td:nth-child(5) { background-color: #f0f0f0; } /* light gray */
+
+    th {
+      background-color: #5b9bd5;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Table 1</h2>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th>Category</th>
+    </tr>
+    <tr>
+      <td>Apples</td>
+      <td>KES 20</td>
+      <td>10</td>
+      <td>KES 200</td>
+      <td>Fruits</td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td>KES 60</td>
+      <td>8</td>
+      <td>KES 480</td>
+      <td>Fruits</td>
+    </tr>
+    <tr>
+      <td>Bananas</td>
+      <td>KES 30</td>
+      <td>12</td>
+      <td>KES 360</td>
+      <td>Fruits</td>
+    </tr>
+  </table>
+
+  <h2>Table 2</h2>
+  <table>
+    <tr>
+      <th>Farm</th>
+      <th>Location</th>
+      <th>Contacts</th>
+      <th>Products</th>
+      <th>Owner</th>
+    </tr>
+    <tr>
+      <td>Marks</td>
+      <td>Muranga</td>
+      <td>0723456789</td>
+      <td>Mangos</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>James</td>
+      <td>Machakos</td>
+      <td>0721567654</td>
+      <td>Oranges</td>
+      <td>James</td>
+    </tr>
+    <tr>
+      <td>Marys</td>
+      <td>Kisii</td>
+      <td>0727123456</td>
+      <td>Avocado</td>
+      <td>Mary</td>
+    </tr>
+  </table>
+
+</body>
+</html>
 

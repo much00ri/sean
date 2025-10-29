@@ -137,9 +137,16 @@
             <source src="Video/What is Real Estate Definition and examples - Marketing Business Network (720p, h264).mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+
+          <!-- 🏠 Added iframes -->
+          <iframe src="https://www.youtube.com/embed/yWpZsY5xkF8" title="Virtual Home Tour" style="width:100%;height:280px;margin-top:16px;border:0;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)" allowfullscreen></iframe>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8577846375864!2d36.82194631524763!3d-1.2920659359842355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4b3c8b6d3%3A0x5a2b6e7c89e03f1b!2sNairobi!5e0!3m2!1sen!2ske!4v1674412000000!5m2!1sen!2ske"
+            title="Haven Homes Nairobi Map"
+            style="width:100%;height:280px;margin-top:16px;border:0;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)">
+          </iframe>
         </div>
-        <div style="min-width:260px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(16,24,40,0.06)">
-        </div>
+        <div style="min-width:260px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(16,24,40,0.06)"></div>
       </div>
     </section>
 
@@ -178,7 +185,6 @@
   </footer>
 
   <script>
-    // Updated property data with fresh images
     const properties = [
       { id: 1, title: "Modern 2-bed apartment, Kilimani", price: 85000, type: "Apartment", beds: 2, location: "Kilimani", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80" },
       { id: 2, title: "3-bed family home, Westlands", price: 180000, type: "House", beds: 3, location: "Westlands", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=60" },
@@ -227,7 +233,6 @@
       alert('Saved property #' + id + ' to your favorites (local demo).');
     }
 
-    // Filtering & search
     document.getElementById('searchBtn').addEventListener('click', () => {
       const loc = document.getElementById('searchLocation').value.trim().toLowerCase();
       const type = document.getElementById('typeFilter').value;
@@ -253,11 +258,9 @@
       let copy = [...properties];
       if(v === 'price-low') copy.sort((a,b)=>a.price-b.price);
       else if(v === 'price-high') copy.sort((a,b)=>b.price-a.price);
-      else if(v === 'newest') copy = copy; // sample data not time-ordered
       renderList(copy);
     });
 
-    // Contact form (demo only: shows success)
     document.getElementById('contactForm').addEventListener('submit', function(e){
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
@@ -269,12 +272,7 @@
       window.location.href = 'tel:+254700000000';
     });
 
-    // Initial render
     renderList(properties);
   </script>
 </body>
 </html>
-
-
-
-

@@ -47,3 +47,242 @@
       .hero{grid-template-columns:1fr; text-align:left}
       .contact{grid-template-columns:1fr}
     }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo">Haven <span style="color:#fff;opacity:.92">Homes</span></div>
+        <div class="pill">Trusted • Local</div>
+      </div>
+      <nav>
+        <a href="#listings">Listings</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="container hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Find your next home with confidence</h1>
+        <p>Browse featured properties — apartments, family homes, and investment opportunities. Transparent listings, local agents, and easy booking.</p>
+
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#listings">Browse Listings</a>
+          <a style="background:transparent;border:2px solid rgba(255,255,255,0.14);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700" href="#contact">Get a valuation</a>
+        </div>
+      </div>
+
+      <aside class="search-card" aria-label="quick search">
+        <strong>Quick search</strong>
+        <div class="search-row" style="margin-top:10px">
+          <input id="searchLocation" placeholder="Location (e.g., Nairobi)" />
+        </div>
+        <div class="search-row" style="margin-top:10px">
+          <select id="typeFilter">
+            <option value="">Any type</option>
+            <option value="Apartment">Apartment</option>
+            <option value="House">House</option>
+            <option value="Commercial">Commercial</option>
+          </select>
+          <select id="bedsFilter">
+            <option value="">Any beds</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+          </select>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn" id="searchBtn">Search</button>
+          <button class="btn" style="background:#eef2ff;color:var(--accent)" id="resetBtn">Reset</button>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="listings">
+      <div class="section-title">
+        <h2>Featured listings</h2>
+        <div style="color:var(--muted)">Showing <span id="resultCount">--</span> properties</div>
+      </div>
+
+      <div class="filters" aria-hidden="false">
+        <div style="font-weight:700;color:var(--muted)">Filter by:</div>
+        <select id="sortBy">
+          <option value="newest">Newest</option>
+          <option value="price-low">Price: Low → High</option>
+          <option value="price-high">Price: High → Low</option>
+        </select>
+      </div>
+
+      <div class="grid" id="propertiesGrid"></div>
+    </section>
+
+    <section id="about" style="margin-top:36px">
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px">
+          <h3>About Haven Homes</h3>
+          <p style="color:var(--muted)">We help buyers and renters find homes across the city with verified listings, local agents, and honest pricing. Whether you're buying, renting, or investing — we'll help you make an informed decision.</p>
+          <ul style="color:var(--muted)">
+            <li>Verified listings & virtual tours</li>
+            <li>Local agents across neighborhoods</li>
+            <li>Easy booking for viewings</li>
+          </ul>
+          
+          <!-- First iframe (property walkthrough) -->
+          <iframe width="100%" height="200" style="border-radius:12px;margin-top:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)" 
+            src="https://www.youtube.com/embed/2d5Kc3eVQwI" 
+            title="Property walkthrough video" frameborder="0" allowfullscreen></iframe>
+
+          <!-- Second iframe (office tour) -->
+          <iframe width="100%" height="200" style="border-radius:12px;margin-top:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)" 
+            src="https://www.youtube.com/embed/XW1c5T_KbAM" 
+            title="Office tour video" frameborder="0" allowfullscreen></iframe>
+
+          <!-- Existing video -->
+          <video controls style="width:100%;border-radius:12px;margin-top:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)">
+            <source src="Video/What is Real Estate Definition and examples - Marketing Business Network (720p, h264).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- First map -->
+          <iframe title="map" src="https://www.google.com/maps?q=Kilimani+Nairobi&output=embed"
+            style="width:100%;height:200px;border:0;border-radius:12px;margin-top:12px"></iframe>
+
+          <!-- Second map -->
+          <iframe title="map" src="https://www.google.com/maps?q=Westlands+Nairobi&output=embed"
+            style="width:100%;height:200px;border:0;border-radius:12px;margin-top:12px"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:36px">
+      <div class="section-title"><h2>Contact an agent</h2><div style="color:var(--muted)">We reply within 24 hours</div></div>
+
+      <div class="contact" style="margin-top:12px">
+        <form id="contactForm" style="background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)">
+          <input placeholder="Full name" required id="name" />
+          <input placeholder="Email" required id="email" />
+          <input placeholder="Phone (optional)" id="phone" />
+          <textarea placeholder="Message (e.g., 'I want to view property #3')" rows="5" id="message"></textarea>
+          <div style="display:flex;gap:8px">
+            <button class="btn" type="submit">Send message</button>
+            <button type="button" id="callAgent" style="background:transparent;border:1px solid #e6e9ef;border-radius:8px;padding:10px">Call Agent</button>
+          </div>
+        </form>
+
+        <div style="padding:16px">
+          <h3 style="margin-top:0">Office</h3>
+          <p style="color:var(--muted)">Haven Homes • Nairobi (example address)</p>
+          <p style="font-weight:700;margin:8px 0">Phone: +254 700 000 000</p>
+
+          <div style="margin-top:12px">
+            <iframe title="map" src="https://www.google.com/maps?q=Nairobi&output=embed" 
+              style="width:100%;height:200px;border:0;border-radius:8px"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+      <div>© <strong>Haven Homes</strong> 2025</div>
+      <div style="color:var(--muted)">Built with ♥ • <a href="https://github.com/blessingmabonga-123/25-1300" target="_blank" style="color:var(--muted);text-decoration:underline">View source</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const properties = [
+      { id: 1, title: "Modern 2-bed apartment, Kilimani", price: 85000, type: "Apartment", beds: 2, location: "Kilimani", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80" },
+      { id: 2, title: "3-bed family home, Westlands", price: 180000, type: "House", beds: 3, location: "Westlands", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=60" },
+      { id: 3, title: "Studio apartment, CBD", price: 45000, type: "Apartment", beds: 1, location: "CBD", img: "https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200&auto=format&fit=crop&q=80" },
+      { id: 4, title: "Retail space for lease, Karen", price: 320000, type: "Commercial", beds: 0, location: "Karen", img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&auto=format&fit=crop&q=80" },
+      { id: 5, title: "4-bed luxury home, Runda", price: 420000, type: "House", beds: 4, location: "Runda", img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&auto=format&fit=crop&q=80" }
+    ];
+
+    const grid = document.getElementById('propertiesGrid');
+    const resultCount = document.getElementById('resultCount');
+
+    function renderList(list){
+      grid.innerHTML = "";
+      resultCount.textContent = list.length;
+      list.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <img loading="lazy" src="${p.img}" alt="${p.title}">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">${p.title}</div>
+                <div class="meta">${p.location} • ${p.type}</div>
+              </div>
+              <div style="text-align:right">
+                <div class="price">KSh ${p.price.toLocaleString()}</div>
+                <div class="meta">${p.beds} beds</div>
+              </div>
+            </div>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button class="btn" onclick="bookViewing(${p.id})">Book viewing</button>
+              <button style="background:transparent;border:1px solid #e6e9ef;padding:8px;border-radius:8px" onclick="save(${p.id})">Save</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(el);
+      });
+    }
+
+    function bookViewing(id){
+      const p = properties.find(x=>x.id===id);
+      alert('Requesting viewing for:\n' + p.title + '\nWe will contact you shortly.');
+    }
+    function save(id){
+      alert('Saved property #' + id + ' to your favorites (local demo).');
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      const loc = document.getElementById('searchLocation').value.trim().toLowerCase();
+      const type = document.getElementById('typeFilter').value;
+      const beds = document.getElementById('bedsFilter').value;
+      let out = properties.filter(p => {
+        if(type && p.type !== type) return false;
+        if(beds && p.beds < Number(beds)) return false;
+        if(loc && !p.location.toLowerCase().includes(loc)) return false;
+        return true;
+      });
+      renderList(out);
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.getElementById('searchLocation').value = '';
+      document.getElementById('typeFilter').value = '';
+      document.getElementById('bedsFilter').value = '';
+      renderList(properties);
+    });
+
+    document.getElementById('sortBy').addEventListener('change', (e) => {
+      const v = e.target.value;
+      let copy = [...properties];
+      if(v === 'price-low') copy.sort((a,b)=>a.price-b.price);
+      else if(v === 'price-high') copy.sort((a,b)=>b.price-a.price);
+      renderList(copy);
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      alert('Thanks, ' + (name||'there') + '! We received your message and will reply within 24hrs.');
+      this.reset();
+    });
+
+    document.getElementById('callAgent').addEventListener('click', () => {
+      window.location.href = 'tel:+254700000000';
+    });
+
+    renderList(properties);
+  </script>
+</body>
+</html>

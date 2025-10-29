@@ -34,7 +34,8 @@
     .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
     .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(16,24,40,0.08)}
-    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card img{width:100%;height:180px;object-fit:cover;display:block;transition:transform 0.3s ease}
+    .card img:hover{transform:scale(1.05)}
     .card-body{padding:12px}
     .price{font-weight:700;color:var(--accent)}
     .meta{color:var(--muted);font-size:13px;margin-top:6px}
@@ -128,32 +129,6 @@
 
     <section id="virtual-tour" style="margin-top:36px">
       <h2>Virtual Tour</h2>
-      <iframe src="https://www.youtube.com/embed/RUQ9840XHQI" title="Virtual Home Tour" style="width:100%;height:380px;border:0;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)" allowfullscreen></iframe>
-    </section>
-  </main>
+      <iframe src="https://www.youtube.com/embed/RUQ9840XHQI" title="Virtual Home Tour" style="width:100%;height:380px;border:0;border-radius:12px;box-shadow:0 6px 18px rgba(
 
-  <!-- 🏠 JS to display 4 house images -->
-  <script>
-    const properties = [
-      { title: "Modern 2-Bed Apartment, Kilimani", price: 85000, type: "Apartment", beds: 2, location: "Kilimani", img: "images/house1.jpg" },
-      { title: "3-Bed Family Home, Westlands", price: 180000, type: "House", beds: 3, location: "Westlands", img: "images/house2.jpg" },
-      { title: "Studio Apartment, CBD", price: 45000, type: "Apartment", beds: 1, location: "CBD", img: "images/house3.jpg" },
-      { title: "4-Bed Luxury Home, Runda", price: 420000, type: "House", beds: 4, location: "Runda", img: "images/house4.jpg" }
-    ];
-
-    const grid = document.getElementById("propertiesGrid");
-    grid.innerHTML = properties.map(p => `
-      <div class="card">
-        <img src="${p.img}" alt="${p.title}">
-        <div class="card-body">
-          <h4>${p.title}</h4>
-          <div class="price">KES ${p.price.toLocaleString()}</div>
-          <div class="meta">${p.beds} Beds • ${p.type} • ${p.location}</div>
-        </div>
-      </div>
-    `).join("");
-
-    document.getElementById("resultCount").textContent = properties.length;
-  </script>
-</body>
-</html>
+        
